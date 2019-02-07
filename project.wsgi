@@ -4,7 +4,7 @@ from flask import session as login_session
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 import sys
-sys.path.append("/var/www/html/catalog")
+sys.path.append("/var/www/html/Lightsail")
 from database_setup import Base, Subject, Course, User
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 import random
@@ -19,7 +19,7 @@ with application.open_resource('client_secrets.json') as f:
 	CLIENT_ID = json.load(f)['web']['client_id']
 APPLICATION_NAME = "Categories Application"
 
-engine = create_engine('sqlite:///categories.db?check_same_thread=false')
+engine = create_engine('sqlite:////var/www/html/Lightsail/categories.db?check_same_thread=false')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)

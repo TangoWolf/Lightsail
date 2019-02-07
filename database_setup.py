@@ -51,6 +51,6 @@ class Course(Base):
         }
 
 
-engine = create_engine('sqlite:///categories.db')
+engine = create_engine('sqlite:////var/www/html/Lightsail/categories.db')
 
 Base.metadata.create_all(engine)
